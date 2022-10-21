@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма регистрации</title>
+    <style>
+        body {
+            height: 100vh;
+            background: linear-gradient(45deg, rgb(251, 251, 126), white)
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10%;
+        }
+
+        input {
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            width: 350px;
+            height: 40px;
+            padding-left: 5%;
+            margin-bottom: 4%;
+        }
+
+        img {
+            max-width: 45%;
+        }
+
+        form,
+        fieldset {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 400px;
+        }
+
+        fieldset {
+            margin-bottom: 4%;
+            padding: 4%;
+            border-radius: 5px;
+        }
+
+        button {
+            cursor: pointer;
+            width: 350px;
+            height: 40px;
+            background: rgb(151, 89, 58);
+            color: rgb(250, 248, 247);
+            border: 2px solid black;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        input:hover,
+        button:hover {
+            background: #b7b6b6;
+            transition: background-color .3s;
+        }
+
+
+        #errorMessage,
+        #errorPerson {
+            text-align: center;
+            color: red;
+        }
+
+        #successMessage {
+            text-align: center;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <img src="https://1.bp.blogspot.com/-39Gi-m7BEXc/YAbXn5NaJ6I/AAAAAAAEpiA/7U_OA-XH-ZsOLldnFda61M5V3-ZJ94negCLcBGAsYHQ/s1000/bbq-burger_%25281%2529_0.jpg"
+            alt="burger">
+
+        <form>
+            <h2>Оформление доставки</h2>
+            <input type="text" placeholder="Введите ваше имя" id="userName">
+
+            <input type="text" placeholder="E-mail адрес" id="email">
+            <input type="tel" placeholder="Номер телефона" id="phone">
+
+            <fieldset>
+                <legend>Данные об адресе</legend>
+                <input type="text" placeholder="Наименование города" id="city" onchange="checkCity()">
+                <input type="text" placeholder="Название улицы" id="street">
+                <input type="text" placeholder="Номер дома" id="home">
+            </fieldset>
+
+            <input type="text" placeholder="Количество персон" id="personNumber" onchange="checkPerson()">
+            <div id="successMessage"></div>
+            <div id="errorPerson"></div>
+            <div id="errorMessage"></div>
+            <button id="valid" type="button" onclick="check()">Подтвердить заказ</button>
+        </form>
+    </main>
+
+
+
+    <script src="form-burgerdelivery.js"></script>
+</body>
+
+</html>
